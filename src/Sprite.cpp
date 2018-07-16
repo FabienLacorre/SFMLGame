@@ -1,6 +1,6 @@
 #include "Sprite.hpp"
 
-Sprite::Sprite(std::string pathName){
+Sprite::Sprite(const std::string &pathName){
     if (!this->texture.loadFromFile(pathName)) {
         std::cout << "erreur loading texture";
     }

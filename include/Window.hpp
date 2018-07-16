@@ -7,12 +7,12 @@ public:
     Window(int x, int y);
     ~Window();
 
-    sf::RenderWindow *GetWindow();
+    sf::RenderWindow &GetWindow();
     void Draw(Sprite &s);
     void Display();
     void Clear();
-    bool IsOpen();
+    const bool IsOpen() const;
     void Close();
 private:
-    sf::RenderWindow *window;
+    sf::RenderWindow window;
 };

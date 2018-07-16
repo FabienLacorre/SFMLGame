@@ -3,7 +3,7 @@
 
 class Sprite{
 public:
-    Sprite(std::string pathName);
+    Sprite(const std::string &pathName);
     ~Sprite();
     sf::Sprite GetSprite();
 private:

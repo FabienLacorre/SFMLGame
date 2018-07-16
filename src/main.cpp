@@ -2,18 +2,18 @@
 #include "Window.hpp"
 
 int main() {
-    Window *win = new Window(600, 600);
+    Window win(600, 600);
     Sprite s("./img/megaman.png");
-    while (win->IsOpen()){
+    while (win.IsOpen()){
         sf::Event event;
-        while (win->GetWindow()->pollEvent(event)){
+        while (win.GetWindow().pollEvent(event)){
             if (event.type == sf::Event::Closed){
-                win->Close();
+                win.Close();
             }
         }
-        win->Clear();
-        win->Draw(s);
-        win->Display();
+        win.Clear();
+        win.Draw(s);
+        win.Display();
     }
     return 0;
 }
