@@ -1,7 +1,8 @@
 NAME	= Game
 
 SRC	= ./src/main.cpp \
-	./src/Window.cpp
+	./src/Window.cpp \
+	./src/Sprite.cpp \
 
 OBJ	 = $(SRC:.cpp=.o)
 
