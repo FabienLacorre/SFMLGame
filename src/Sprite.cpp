@@ -5,8 +5,8 @@ Sprite::Sprite(const std::string &pathName){
         std::cout << "erreur loading texture";
     }
     this->sprite.setTexture(this->texture);
-    this->sprite.setTextureRect(sf::IntRect(0,0,16,20));
-    this->sprite.setScale(sf::Vector2f(2, 2));
+    //this->sprite.setTextureRect(sf::IntRect(0,0,16,20));
+    //this->sprite.setScale(sf::Vector2f(2, 2));
     std::cout << "Sprite created" << std::endl;
 }
 

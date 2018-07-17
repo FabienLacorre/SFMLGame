@@ -1,3 +1,6 @@
+#ifndef __WINDOW_HPP__
+#define __WINDOW_HPP__
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Sprite.hpp"
@@ -16,3 +19,5 @@ public:
 private:
     sf::RenderWindow window;
 };
+
+#endif

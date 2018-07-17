@@ -1,0 +1,36 @@
+#ifndef __ENTITY_HPP__
+#define __ENTITY_HPP__
+
+#include <iostream>
+#include <SFML/Graphics.hpp>
+
+#include "Sprite.hpp"
+
+class Entity {
+public:
+	Entity(std::string pathSprite,
+		float scale,
+		int width, 
+		int height,
+		int posX,
+		int posY,
+		float velocity);
+	~Entity();
+
+	Sprite &GetSprite();
+	void MoveEntity(sf::Clock &clock, float x, float y);
+	sf::Vector2f GetPosition();
+	float GetVelocity() const;
+	void SpriteSheetMovement(sf::Clock &clock, float posTop, float posAddLeft, float maxTiles);
+
+private:
+	Sprite sprite;
+	float velocity;
+	int width;
+	int height;
+	int posX;
+	int posY;
+	float scale;
+};
+
+#endif

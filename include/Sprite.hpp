@@ -1,3 +1,6 @@
+#ifndef __SPRITE_HPP__
+#define __SPRITE_HPP__
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
@@ -11,3 +14,5 @@ private:
     sf::Texture texture;
     sf::Sprite sprite;
 };
+
+#endif
