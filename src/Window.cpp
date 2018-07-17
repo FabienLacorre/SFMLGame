@@ -1,9 +1,9 @@
 #include "Window.hpp"
 
 Window::Window(int x, int y):
-window(sf::VideoMode(x, y), "THIS IS WORKS"){
+window(sf::VideoMode(x, y), "Game SFML"){
     this->window.setFramerateLimit(30);
-    std::cout << "window creation" << std::endl;
+    std::cout << "Window created" << std::endl;
 }
 
 Window::~Window(){
@@ -14,7 +14,7 @@ sf::RenderWindow &Window::GetWindow(){
     return this->window;
 }
 
-void Window::Draw(Sprite &s){
+void Window::DrawSprite(Sprite &s){
     this->window.draw(s.GetSprite());
 }
 

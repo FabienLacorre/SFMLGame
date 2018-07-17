@@ -8,7 +8,7 @@ public:
     ~Window();
 
     sf::RenderWindow &GetWindow();
-    void Draw(Sprite &s);
+    void DrawSprite(Sprite &s);
     void Display();
     void Clear();
     const bool IsOpen() const;
