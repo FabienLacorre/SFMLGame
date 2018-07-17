@@ -7,15 +7,13 @@ SRC	= ./src/main.cpp \
 
 OBJ	 = $(SRC:.cpp=.o)
 
-CC	 = g++
-
 CXXFLAGS = -std=c++17 -I./include
 
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(CXXFLAGS) $(OBJ) -lsfml-graphics -lsfml-window -lsfml-system
+	g++ -o $(NAME) $(CXXFLAGS) $(OBJ) -lsfml-graphics -lsfml-window -lsfml-system -g3
 clean:
 	rm -rf src/*.o
 

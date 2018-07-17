@@ -7,7 +7,7 @@ Entity::Entity(std::string pathSprite,
 	int posX,
 	int posY,
 	float velocity):
-sprite(pathSprite) 
+sprite(pathSprite)
 {
 	this->velocity = velocity;
 	this->width = width;
@@ -27,7 +27,7 @@ Sprite &Entity::GetSprite(){
 	return this->sprite;
 }
 
-void Entity::SpriteSheetMovement(sf::Clock &clock, 
+void Entity::SpriteSheetMovement(sf::Clock &clock,
 	float posTop, float posAddLeft, float maxTiles) {
 	if (clock.getElapsedTime().asSeconds() > 0.1f){
 		sf::IntRect pos = this->sprite.GetSprite().getTextureRect();
@@ -39,6 +39,10 @@ void Entity::SpriteSheetMovement(sf::Clock &clock,
 		this->sprite.GetSprite().setTextureRect(pos);
 		clock.restart();
 	}
+}
+
+void Entity::SetPosition(float x, float y){
+	this->sprite.GetSprite().setPosition(sf::Vector2f(x, y));
 }
 
 void Entity::MoveEntity(sf::Clock &clock, float x, float y){
@@ -70,4 +74,3 @@ sf::Vector2f Entity::GetPosition() {
 float Entity::GetVelocity() const {
 	return this->velocity;
 }
-

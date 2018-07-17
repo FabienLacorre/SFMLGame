@@ -3,10 +3,20 @@
 #include "Window.hpp"
 #include "Sprite.hpp"
 
+void DrawBackground(Window &win, Entity &grass){
+// 37 fois 16 pour avoir taille de la window //
+    for (int i = 0; i < 37; i++){
+        for (int j = 0; j < 37; j++) {
+            grass.SetPosition(i * 16, j * 16);
+            win.DrawSprite(grass.GetSprite());
+        }
+    }
+}
 
 int main() {
-    Window win(600, 600);
-    Entity player("./img/zeldaLikeSprite/playerSprites.png", 2, 16, 22, 50, 50, 3);
+    Window win(592, 592);
+    Entity player("./img/zeldaLikeSprite/playerSprites.png", 2, 16, 22, 50, 50, 4);
+    Entity grass("./img/zeldaLikeSprite/grass.png", 2, 16, 16, 50, 50, 1);
     sf::Clock clock;
 
     while (win.IsOpen()){
@@ -34,6 +44,7 @@ int main() {
 
         // DISPLAY //
         win.Clear();
+        DrawBackground(win, grass);
         win.DrawSprite(player.GetSprite());
         win.Display();
         // ----- //

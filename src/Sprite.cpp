@@ -21,19 +21,15 @@ sf::Sprite &Sprite::GetSprite(){
 void Sprite::MoveSprite(float velocity, std::string move){
 	sf::Vector2f pos = this->sprite.getPosition();
 	if (move == "top"){
-		std::cout << "move top" << std::endl;
 		this->sprite.setPosition(pos.x, pos.y - velocity);
 	}
 	else if (move == "bottom"){
-		std::cout << "move bottom" << std::endl;
 		this->sprite.setPosition(pos.x, pos.y + velocity);
 	}
 	else if (move == "right"){
-		std::cout << "move right" << std::endl;
 		this->sprite.setPosition(pos.x + velocity, pos.y);
 	}
 	else if (move == "left"){
-		std::cout << "move left" << std::endl;
 		this->sprite.setPosition(pos.x - velocity, pos.y);
 	}
 }

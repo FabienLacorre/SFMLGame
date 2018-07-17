@@ -10,7 +10,7 @@ class Entity {
 public:
 	Entity(std::string pathSprite,
 		float scale,
-		int width, 
+		int width,
 		int height,
 		int posX,
 		int posY,
@@ -22,6 +22,7 @@ public:
 	sf::Vector2f GetPosition();
 	float GetVelocity() const;
 	void SpriteSheetMovement(sf::Clock &clock, float posTop, float posAddLeft, float maxTiles);
+	void SetPosition(float x, float y);
 
 private:
 	Sprite sprite;
