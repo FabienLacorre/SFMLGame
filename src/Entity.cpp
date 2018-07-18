@@ -1,13 +1,13 @@
 #include "Entity.hpp"
 
-Entity::Entity(std::string pathSprite,
+Entity::Entity(sf::Texture &texture,
 	float scale,
 	int width,
 	int height,
 	int posX,
 	int posY,
 	float velocity):
-sprite(pathSprite)
+sprite(texture)
 {
 	this->velocity = velocity;
 	this->width = width;
@@ -15,6 +15,7 @@ sprite(pathSprite)
 	this->posX = posX;
 	this->posY = posY;
 	this->scale = scale;
+	this->sprite.GetSprite().setPosition(sf::Vector2f(this->posX, this->posY));
 	this->sprite.GetSprite().setTextureRect(sf::IntRect(0,0, width, height));
 	this->sprite.GetSprite().setScale(this->scale, this->scale);
 }

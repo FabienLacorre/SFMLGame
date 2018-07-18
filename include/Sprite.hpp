@@ -6,7 +6,7 @@
 
 class Sprite{
 public:
-    Sprite(const std::string &pathName);
+    Sprite(sf::Texture &texture);
     ~Sprite();
     sf::Sprite &GetSprite();
     void MoveSprite(float velocity, std::string move);

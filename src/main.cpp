@@ -2,6 +2,7 @@
 #include "Entity.hpp"
 #include "Window.hpp"
 #include "Sprite.hpp"
+#include "TextureLoader.hpp"
 
 void DrawBackground(Window &win, Entity &grass){
 // 37 fois 16 pour avoir taille de la window //
@@ -15,11 +16,15 @@ void DrawBackground(Window &win, Entity &grass){
 
 int main() {
     Window win(592, 592);
-    Entity player("./img/zeldaLikeSprite/playerSprites.png", 2, 16, 22, 50, 50, 4);
-    Entity grass("./img/zeldaLikeSprite/grass.png", 2, 16, 16, 50, 50, 0);
-
-    Entity fountain("./img/zeldaLikeSprite/fountain.png", 2, 48, 45, 50, 50, 0);
     sf::Clock clock;
+    TextureLoader textureLoader;
+
+    textureLoader.PushTexture("fountain", "./img/zeldaLikeSprite/fountain.png");
+    textureLoader.PushTexture("player", "./img/zeldaLikeSprite/playerSprites.png");
+    textureLoader.PushTexture("grass", "./img/zeldaLikeSprite/grass.png");
+    Entity player(textureLoader.GetImage("player"), 2, 16, 22, 50, 50, 4);
+    Entity grass(textureLoader.GetImage("grass"), 2, 16, 16, 50, 50, 0);
+    Entity fountain(textureLoader.GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 
     while (win.IsOpen()){
         sf::Event event;
@@ -42,7 +47,6 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             player.MoveEntity(clock, player.GetPosition().x + player.GetVelocity(), player.GetPosition().y);
         }
-
         // ----- //
 
         // STATICK SPRITE MOVEMENT //

@@ -8,7 +8,7 @@
 
 class Entity {
 public:
-	Entity(std::string pathSprite,
+	Entity(sf::Texture &texture,
 		float scale,
 		int width,
 		int height,
