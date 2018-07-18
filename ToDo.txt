@@ -1,0 +1,14 @@
+// TO DO //
+
+- Creation de panel pour integration de menu ou d'inventaire.
+- Creation HUD.
+- Gestion de colision.
+- Changement d'écran.
+- Creation PNJ.
+- Dialogue PNJ.
+- Menu de lancement.
+- Editeur de map.
+- Creation inventaire.
+- Objets avec interaction.
+
+// ----- //
