@@ -22,7 +22,7 @@ int main() {
     textureLoader.PushTexture("fountain", "./img/zeldaLikeSprite/fountain.png");
     textureLoader.PushTexture("player", "./img/zeldaLikeSprite/playerSprites.png");
     textureLoader.PushTexture("grass", "./img/zeldaLikeSprite/grass.png");
-    Entity player(textureLoader.GetImage("player"), 2, 16, 22, 50, 50, 4);
+    Entity player(textureLoader.GetImage("player"), 2, 16, 22, 300, 300, 2);
     Entity grass(textureLoader.GetImage("grass"), 2, 16, 16, 50, 50, 0);
     Entity fountain(textureLoader.GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 
@@ -54,7 +54,7 @@ int main() {
         // ----- //
 
         // CLOCK //
-        if (clock.getElapsedTime().asSeconds() > 0.1f){
+        if (clock.getElapsedTime().asSeconds() > 0.15f){
             clock.restart();
         }
         // ----- //

@@ -30,7 +30,7 @@ Sprite &Entity::GetSprite(){
 
 void Entity::SpriteSheetMovement(sf::Clock &clock,
 	float posTop, float maxTiles) {
-	if (clock.getElapsedTime().asSeconds() > 0.1f){
+	if (clock.getElapsedTime().asSeconds() > 0.15f){
 		sf::IntRect pos = this->sprite.GetSprite().getTextureRect();
 		pos.top = posTop;
 		pos.left += this->width;
