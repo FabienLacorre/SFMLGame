@@ -16,7 +16,9 @@ void DrawBackground(Window &win, Entity &grass){
 int main() {
     Window win(592, 592);
     Entity player("./img/zeldaLikeSprite/playerSprites.png", 2, 16, 22, 50, 50, 4);
-    Entity grass("./img/zeldaLikeSprite/grass.png", 2, 16, 16, 50, 50, 1);
+    Entity grass("./img/zeldaLikeSprite/grass.png", 2, 16, 16, 50, 50, 0);
+
+    Entity fountain("./img/zeldaLikeSprite/fountain.png", 2, 48, 45, 50, 50, 0);
     sf::Clock clock;
 
     while (win.IsOpen()){
@@ -40,11 +42,21 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             player.MoveEntity(clock, player.GetPosition().x + player.GetVelocity(), player.GetPosition().y);
         }
+
+        fountain.SpriteSheetMovement(clock, 0, 3);
+        // ----- //
+
+
+        // CLOCK //
+        if (clock.getElapsedTime().asSeconds() > 0.1f){
+            clock.restart();
+        }
         // ----- //
 
         // DISPLAY //
         win.Clear();
         DrawBackground(win, grass);
+        win.DrawSprite(fountain.GetSprite());
         win.DrawSprite(player.GetSprite());
         win.Display();
         // ----- //

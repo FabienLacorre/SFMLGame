@@ -21,7 +21,7 @@ public:
 	void MoveEntity(sf::Clock &clock, float x, float y);
 	sf::Vector2f GetPosition();
 	float GetVelocity() const;
-	void SpriteSheetMovement(sf::Clock &clock, float posTop, float posAddLeft, float maxTiles);
+	void SpriteSheetMovement(sf::Clock &clock, float posTop, float maxTiles);
 	void SetPosition(float x, float y);
 
 private:

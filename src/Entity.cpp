@@ -28,7 +28,7 @@ Sprite &Entity::GetSprite(){
 }
 
 void Entity::SpriteSheetMovement(sf::Clock &clock,
-	float posTop, float posAddLeft, float maxTiles) {
+	float posTop, float maxTiles) {
 	if (clock.getElapsedTime().asSeconds() > 0.1f){
 		sf::IntRect pos = this->sprite.GetSprite().getTextureRect();
 		pos.top = posTop;
@@ -37,7 +37,6 @@ void Entity::SpriteSheetMovement(sf::Clock &clock,
 			pos.left = 0;
 		}
 		this->sprite.GetSprite().setTextureRect(pos);
-		clock.restart();
 	}
 }
 
@@ -50,19 +49,19 @@ void Entity::MoveEntity(sf::Clock &clock, float x, float y){
 
 	if (x == pos.x && y < pos.y){
 		this->sprite.MoveSprite(this->velocity, "top");
-		SpriteSheetMovement(clock, 44, 16, 4);
+		SpriteSheetMovement(clock, this->height * 2, 4);
 	}
 	else if (x == pos.x && y > pos.y){
 		this->sprite.MoveSprite(this->velocity, "bottom");
-		SpriteSheetMovement(clock, 0, 16, 4);
+		SpriteSheetMovement(clock, this->height * 0, 4);
 	}
 	else if (x > pos.x && y == pos.y){
 		this->sprite.MoveSprite(this->velocity, "right");
-		SpriteSheetMovement(clock, 22, 16, 4);
+		SpriteSheetMovement(clock, this->height * 1, 4);
 	}
 	else if (x < pos.x && y == pos.y){
 		this->sprite.MoveSprite(this->velocity, "left");
-		SpriteSheetMovement(clock, 66, 16, 4);
+		SpriteSheetMovement(clock, this->height * 3, 4);
 	}
 	this->sprite.GetSprite().setPosition(sf::Vector2f(x, y));
 }
