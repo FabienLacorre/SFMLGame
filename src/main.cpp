@@ -43,9 +43,11 @@ int main() {
             player.MoveEntity(clock, player.GetPosition().x + player.GetVelocity(), player.GetPosition().y);
         }
 
-        fountain.SpriteSheetMovement(clock, 0, 3);
         // ----- //
 
+        // STATICK SPRITE MOVEMENT //
+        fountain.SpriteSheetMovement(clock, 0, 3);
+        // ----- //
 
         // CLOCK //
         if (clock.getElapsedTime().asSeconds() > 0.1f){
