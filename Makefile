@@ -6,7 +6,7 @@ SRC	= ./src/main.cpp \
 	./src/Entity.cpp \
 	./src/TextureLoader.cpp \
 	./src/Panel.cpp \
-	
+	./src/PanelMenu.cpp \
 
 OBJ	 = $(SRC:.cpp=.o)
 

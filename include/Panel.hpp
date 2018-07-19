@@ -9,7 +9,8 @@ class Panel {
 public:
 	Panel(bool blocking, bool active);
 	virtual ~Panel();
-private:
+	virtual void Run();
+protected:
 	bool blocking;
 	bool active;
 };

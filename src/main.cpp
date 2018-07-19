@@ -1,8 +1,11 @@
 #include <SFML/Graphics.hpp>
+#include <list>
 #include "Entity.hpp"
 #include "Window.hpp"
 #include "Sprite.hpp"
 #include "TextureLoader.hpp"
+#include "Panel.hpp"
+#include "PanelMenu.hpp"
 
 void DrawBackground(Window &win, Entity &grass){
 // 37 fois 16 pour avoir taille de la window //
@@ -26,6 +29,19 @@ int main() {
     Entity grass(textureLoader.GetImage("grass"), 2, 16, 16, 50, 50, 0);
     Entity fountain(textureLoader.GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 
+
+    std::list <Panel*>l;
+    Panel *pan = new Panel(false, false);
+    PanelMenu *pan2 = new PanelMenu(false, false);
+
+    l.push_back(pan);
+    l.push_back(pan2);
+
+    for (auto elem : l){
+        elem->Run();
+    }
+
+
     while (win.IsOpen()){
         sf::Event event;
         while (win.GetWindow().pollEvent(event)){
@@ -34,7 +50,11 @@ int main() {
             }
         }
 
+
         // TOUCH EVENT //
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+            win.Close();
+        }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
             player.MoveEntity(clock, player.GetPosition().x, player.GetPosition().y + player.GetVelocity());
         }
