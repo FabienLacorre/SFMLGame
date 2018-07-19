@@ -5,6 +5,8 @@ SRC	= ./src/main.cpp \
 	./src/Sprite.cpp \
 	./src/Entity.cpp \
 	./src/TextureLoader.cpp \
+	./src/Panel.cpp \
+	
 
 OBJ	 = $(SRC:.cpp=.o)
 

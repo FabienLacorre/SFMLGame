@@ -2,9 +2,6 @@
 
 Sprite::Sprite(sf::Texture &texture){
     this->sprite.setTexture(texture);
-    //this->sprite.setTextureRect(sf::IntRect(0,0,16,20));
-    //this->sprite.setScale(sf::Vector2f(2, 2));
-    std::cout << "Sprite created" << std::endl;
 }
 
 Sprite::~Sprite(){

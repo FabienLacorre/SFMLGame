@@ -3,7 +3,6 @@
 Window::Window(int x, int y):
 window(sf::VideoMode(x, y), "Game SFML"){
     this->window.setFramerateLimit(60);
-    std::cout << "Window created" << std::endl;
 }
 
 Window::~Window(){
