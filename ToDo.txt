@@ -10,5 +10,19 @@
 - Editeur de map.
 - Creation inventaire.
 - Objets avec interaction.
+- Statistique personnage -> feuille stats.
+- Item a équipé.
+- Création combat style pokemon ou ff.
+- Combat aléatoire.
+
+// ----- //
+
+// EXTRA //
+
+- housing.
+- Elevage familier.
+- cinématique.
+- tutorial.
+- naration.
 
 // ----- //
