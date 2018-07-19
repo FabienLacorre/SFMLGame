@@ -6,7 +6,7 @@ Panel(blocking, active){
 }
 
 PanelMenu::~PanelMenu(){
-
+	std::cout << "panel menu destroyed" << std::endl;
 }
 
 void PanelMenu::Run() {

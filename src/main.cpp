@@ -30,17 +30,19 @@ int main() {
     Entity fountain(textureLoader.GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 
 
-    std::list <Panel*>l;
+    // CREATE PANELS //
+    std::list <Panel*>lPanel;
     Panel *pan = new Panel(false, false);
     PanelMenu *pan2 = new PanelMenu(false, false);
+    lPanel.push_back(pan);
+    lPanel.push_back(pan2);
+    // ----- //
 
-    l.push_back(pan);
-    l.push_back(pan2);
-
-    for (auto elem : l){
+    // TEST EXECUTION PANELS //
+    for (auto elem : lPanel){
         elem->Run();
     }
-
+    // ----- //
 
     while (win.IsOpen()){
         sf::Event event;
@@ -49,7 +51,6 @@ int main() {
                 win.Close();
             }
         }
-
 
         // TOUCH EVENT //
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
@@ -87,5 +88,11 @@ int main() {
         win.Display();
         // ----- //
     }
+
+    // DESTROY PANELS //
+    for (auto elem : lPanel){
+        delete elem;        
+    }
+    // ----- //
     return 0;
 }

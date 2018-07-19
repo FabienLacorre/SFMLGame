@@ -6,7 +6,7 @@ Panel::Panel(bool blocking, bool active){
 }
 
 Panel::~Panel(){
-
+	std::cout << "panel destroyed" << std::endl;
 }
 
 void Panel::Run(){

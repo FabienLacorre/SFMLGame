@@ -6,7 +6,7 @@
 class PanelMenu : public Panel{
 public:
 	PanelMenu(bool blocking, bool active);
-	~PanelMenu();
+	~PanelMenu() override;
 private:
 	void Run() override;
 };
