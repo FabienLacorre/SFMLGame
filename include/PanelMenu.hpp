@@ -9,7 +9,7 @@ public:
 	PanelMenu(bool blocking, bool active, Window &win, TextureLoader &texture);
 	~PanelMenu() override;
 private:
-	void Run() override;
+	void Run(sf::Event &event, sf::Clock &clock) override;
 };
 
 #endif

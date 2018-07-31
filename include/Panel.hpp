@@ -10,7 +10,7 @@ class Panel {
 public:
 	Panel(bool blocking, bool active, Window &win, TextureLoader &textures);
 	virtual ~Panel();
-	virtual void Run();
+	virtual void Run(sf::Event &event, sf::Clock &clock);
 
 	void SetWindow(Window &win);
 protected:

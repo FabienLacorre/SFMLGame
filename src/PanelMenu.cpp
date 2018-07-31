@@ -9,8 +9,6 @@ PanelMenu::~PanelMenu(){
 	std::cout << "panel menu destroyed" << std::endl;
 }
 
-void PanelMenu::Run() {
-	std::cout << std::endl;
-	std::cout << "panel menu run" << std::endl;
-	std::cout << std::endl;
+void PanelMenu::Run(sf::Event &event, sf::Clock &clock) {
+
 }
