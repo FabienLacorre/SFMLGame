@@ -27,7 +27,6 @@ void PanelGame::Run(sf::Event &event, sf::Clock &clock) {
 	}
     // ----- //
 
-
 	for (int i = 0; i < 37; i++){
 		for (int j = 0; j < 37; j++) {
 			this->grass->SetPosition(i * 16, j * 16);
