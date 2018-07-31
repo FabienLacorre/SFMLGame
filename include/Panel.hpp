@@ -4,10 +4,11 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Window.hpp"
+#include "TextureLoader.hpp"
 
 class Panel {
 public:
-	Panel(bool blocking, bool active, Window &win);
+	Panel(bool blocking, bool active, Window &win, TextureLoader &textures);
 	virtual ~Panel();
 	virtual void Run();
 
@@ -17,6 +18,7 @@ protected:
 	bool active;
 
 	Window *win;
+	TextureLoader *textureLoader;
 };
 
 #endif

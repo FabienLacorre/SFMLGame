@@ -1,7 +1,7 @@
 #include "PanelGame.hpp"
 
-PanelGame::PanelGame(bool blocking, bool active, Window &win):
-Panel(blocking, active, win){
+PanelGame::PanelGame(bool blocking, bool active, Window &win, TextureLoader &textures):
+Panel(blocking, active, win, textures){
 
 }
 

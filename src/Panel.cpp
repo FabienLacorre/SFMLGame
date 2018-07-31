@@ -1,9 +1,10 @@
 #include "Panel.hpp"
 
-Panel::Panel(bool blocking, bool active, Window &win){
+Panel::Panel(bool blocking, bool active, Window &win, TextureLoader &textures){
 	this->blocking = blocking;
 	this->active = active;
 	this->win = &win;
+	this->textureLoader = &textures;
 }
 
 Panel::~Panel(){

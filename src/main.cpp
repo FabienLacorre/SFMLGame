@@ -18,7 +18,6 @@ void DrawBackground(Window &win, Entity &grass){
         }
     }
 }
-
 // ----------------- //
 
 int main() {
@@ -35,9 +34,9 @@ int main() {
 
     // CREATE PANELS //
     std::list <Panel*>lPanel;
-    Panel *pan = new Panel(false, false, win);
-    PanelMenu *pan2 = new PanelMenu(false, false, win);
-    PanelGame *mainPanel = new PanelGame(false, false, win);
+    Panel *pan = new Panel(false, false, win, textureLoader);
+    PanelMenu *pan2 = new PanelMenu(false, false, win, textureLoader);
+    PanelGame *mainPanel = new PanelGame(false, false, win, textureLoader);
 
     lPanel.push_back(pan);
     lPanel.push_back(pan2);
