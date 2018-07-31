@@ -1,6 +1,5 @@
 // TO DO //
 
-- Creation de panel pour integration de menu ou d'inventaire.
 - Creation HUD.
 - Gestion de colision.
 - Changement d'écran.
