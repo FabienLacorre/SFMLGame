@@ -21,7 +21,6 @@
 
 - housing.
 - Elevage familier.
-- cinématique.
 - tutorial.
 - naration.
 

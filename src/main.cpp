@@ -6,7 +6,9 @@
 #include "TextureLoader.hpp"
 #include "Panel.hpp"
 #include "PanelMenu.hpp"
+#include "PanelGame.hpp"
 
+// A VIRER APRES -- JUSTE POUR AVOIR UN BACKGROUND EN ATTENDANT //
 void DrawBackground(Window &win, Entity &grass){
 // 37 fois 16 pour avoir taille de la window //
     for (int i = 0; i < 37; i++){
@@ -16,6 +18,8 @@ void DrawBackground(Window &win, Entity &grass){
         }
     }
 }
+
+// ----------------- //
 
 int main() {
     Window win(592, 592);
@@ -29,13 +33,15 @@ int main() {
     Entity grass(textureLoader.GetImage("grass"), 2, 16, 16, 50, 50, 0);
     Entity fountain(textureLoader.GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 
-
     // CREATE PANELS //
     std::list <Panel*>lPanel;
-    Panel *pan = new Panel(false, false);
-    PanelMenu *pan2 = new PanelMenu(false, false);
+    Panel *pan = new Panel(false, false, win);
+    PanelMenu *pan2 = new PanelMenu(false, false, win);
+    PanelGame *mainPanel = new PanelGame(false, false, win);
+
     lPanel.push_back(pan);
     lPanel.push_back(pan2);
+    lPanel.push_back(mainPanel);
     // ----- //
 
     // TEST EXECUTION PANELS //

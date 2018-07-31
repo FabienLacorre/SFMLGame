@@ -1,7 +1,7 @@
 #include "PanelMenu.hpp"
 
-PanelMenu::PanelMenu(bool blocking, bool active):
-Panel(blocking, active){
+PanelMenu::PanelMenu(bool blocking, bool active, Window &win):
+Panel(blocking, active, win){
 
 }
 

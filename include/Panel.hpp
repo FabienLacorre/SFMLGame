@@ -7,12 +7,16 @@
 
 class Panel {
 public:
-	Panel(bool blocking, bool active);
+	Panel(bool blocking, bool active, Window &win);
 	virtual ~Panel();
 	virtual void Run();
+
+	void SetWindow(Window &win);
 protected:
 	bool blocking;
 	bool active;
+
+	Window *win;
 };
 
 #endif
