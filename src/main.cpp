@@ -39,20 +39,23 @@ void RestartClock(sf::Clock &clock){
 
 int main() {
     Window win(592, 592);
-
+    sf::Clock clock;
     TextureLoader textureLoader;
+
     textureLoader.PushTexture("fountain", "./img/zeldaLikeSprite/fountain.png");
     textureLoader.PushTexture("player", "./img/zeldaLikeSprite/playerSprites.png");
     textureLoader.PushTexture("grass", "./img/zeldaLikeSprite/grass.png");
 
     std::list <Panel*>lPanels;
-    lPanels.push_back(new Panel(false, false, win, textureLoader));
-    lPanels.push_back(new PanelMenu(false, false, win, textureLoader));
-    lPanels.push_back(new PanelGame(false, false, win, textureLoader));
+    Panel *pan = new Panel(false, false, win, textureLoader);
+    PanelMenu *pan2 = new PanelMenu(false, false, win, textureLoader);
+    PanelGame *mainPanel = new PanelGame(false, false, win, textureLoader);
+
+    lPanels.push_back(pan);
+    lPanels.push_back(pan2);
+    lPanels.push_back(mainPanel);
 
     sf::Event event;
-    sf::Clock clock;
-    
     while (win.IsOpen()){
         win.Clear();
         CatchEnd(event, win);
