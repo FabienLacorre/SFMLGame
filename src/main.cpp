@@ -47,13 +47,9 @@ int main() {
     textureLoader.PushTexture("grass", "./img/zeldaLikeSprite/grass.png");
 
     std::list <Panel*>lPanels;
-    Panel *pan = new Panel(false, false, win, textureLoader);
-    PanelMenu *pan2 = new PanelMenu(false, false, win, textureLoader);
-    PanelGame *mainPanel = new PanelGame(false, false, win, textureLoader);
-
-    lPanels.push_back(pan);
-    lPanels.push_back(pan2);
-    lPanels.push_back(mainPanel);
+    lPanels.push_back(new Panel(false, false, win, textureLoader));
+    lPanels.push_back(new PanelMenu(false, false, win, textureLoader));
+    lPanels.push_back(new PanelGame(false, false, win, textureLoader));
 
     sf::Event event;
     while (win.IsOpen()){
