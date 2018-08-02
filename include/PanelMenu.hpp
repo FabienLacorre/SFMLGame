@@ -10,6 +10,12 @@ public:
 	~PanelMenu() override;
 private:
 	void Run(sf::Event &event, sf::Clock &clock) override;
+
+	// ENTITIES //
+	Entity *heart1;
+	Entity *heart2;
+	Entity *heart3;
+	// -------- //
 };
 
 #endif

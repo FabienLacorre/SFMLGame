@@ -4,6 +4,7 @@ PanelGame::PanelGame(bool blocking, bool active, Window &win, TextureLoader &tex
 Panel(blocking, active, win, textures){
 	this->player = new Entity(this->textureLoader->GetImage("player"), 2, 16, 22, 300, 300, 2);
 	this->fountain = new Entity(this->textureLoader->GetImage("fountain"), 2, 48, 45, 50, 50, 0);
+	this->fountain2 = new Entity(this->textureLoader->GetImage("fountain"), 2, 48, 45, 200, 50, 0);
 	this->grass = new Entity(this->textureLoader->GetImage("grass"), 2, 16, 16, 50, 50, 0);
 }
 
@@ -35,7 +36,9 @@ void PanelGame::Run(sf::Event &event, sf::Clock &clock) {
 	}
 
 	this->fountain->SpriteSheetMovement(clock, 0, 3);
+	this->fountain2->SpriteSheetMovement(clock, 0, 3);
 
 	this->win->DrawSprite(this->fountain->GetSprite());
+	this->win->DrawSprite(this->fountain2->GetSprite());
 	this->win->DrawSprite(this->player->GetSprite());
 }

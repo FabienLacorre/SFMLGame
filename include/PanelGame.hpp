@@ -15,6 +15,7 @@ private:
 	// ENTITIES //
 	Entity *player;
 	Entity *fountain;
+	Entity *fountain2;
 	Entity *grass;
 	// -------  //
 };
