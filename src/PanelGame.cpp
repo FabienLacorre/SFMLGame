@@ -2,13 +2,8 @@
 
 PanelGame::PanelGame(bool blocking, bool active, Window &win, TextureLoader &textures):
 Panel(blocking, active, win, textures){
-
 	this->mapReader = new MapReader("./map/Map.txt");
-    //this->mapReader->DisplayMap();
-
 	this->mapInterpretor = new MapInterpretor();
-    //this->mapInterpretor->DecryptMap(mapReader->GetMap());
-
 	this->elems.push_back(std::make_pair(
 		"player",
 		new Player(this->textureLoader->GetImage("player"), 2, 16, 22, 300, 300, 2)
