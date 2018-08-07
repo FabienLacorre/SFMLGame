@@ -8,6 +8,9 @@ SRC	= ./src/main.cpp \
 	./src/Panel.cpp \
 	./src/PanelMenu.cpp \
 	./src/PanelGame.cpp \
+	./src/Player.cpp \
+	./src/MapReader.cpp \
+	./src/MapInterpretor.cpp \
 
 OBJ	 = $(SRC:.cpp=.o)
 

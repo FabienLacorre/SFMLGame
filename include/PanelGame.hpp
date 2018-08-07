@@ -4,6 +4,7 @@
 #include "Panel.hpp"
 #include "TextureLoader.hpp"
 #include "Entity.hpp"
+#include "Player.hpp"
 
 class PanelGame : public Panel{
 public:
@@ -13,7 +14,7 @@ private:
 	void Run(sf::Event &event, sf::Clock &clock) override;
 
 	// ENTITIES //
-	Entity *player;
+	Player *player;
 	Entity *fountain;
 	Entity *fountain2;
 	Entity *grass;

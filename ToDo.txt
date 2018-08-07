@@ -1,12 +1,13 @@
 // TO DO //
 
+- Editeur de map.
 - Creation HUD.
 - Gestion de colision.
 - Changement d'écran.
 - Creation PNJ.
 - Dialogue PNJ.
 - Menu de lancement.
-- Editeur de map.
+
 - Creation inventaire.
 - Objets avec interaction.
 - Statistique personnage -> feuille stats.

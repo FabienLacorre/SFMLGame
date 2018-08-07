@@ -2,7 +2,7 @@
 
 PanelGame::PanelGame(bool blocking, bool active, Window &win, TextureLoader &textures):
 Panel(blocking, active, win, textures){
-	this->player = new Entity(this->textureLoader->GetImage("player"), 2, 16, 22, 300, 300, 2);
+	this->player = new Player(this->textureLoader->GetImage("player"), 2, 16, 22, 300, 300, 2);
 	this->fountain = new Entity(this->textureLoader->GetImage("fountain"), 2, 48, 45, 50, 50, 0);
 	this->fountain2 = new Entity(this->textureLoader->GetImage("fountain"), 2, 48, 45, 200, 50, 0);
 	this->grass = new Entity(this->textureLoader->GetImage("grass"), 2, 16, 16, 50, 50, 0);

@@ -24,7 +24,7 @@ public:
 	void SpriteSheetMovement(sf::Clock &clock, float posTop, float maxTiles);
 	void SetPosition(float x, float y);
 
-private:
+protected:
 	Sprite sprite;
 	float velocity;
 	int width;
