@@ -5,6 +5,9 @@
 #include "TextureLoader.hpp"
 #include "Entity.hpp"
 #include "Player.hpp"
+#include "MapReader.hpp"
+#include "MapInterpretor.hpp"
+#include <list>
 
 class PanelGame : public Panel{
 public:
@@ -12,13 +15,16 @@ public:
 	~PanelGame() override;
 private:
 	void Run(sf::Event &event, sf::Clock &clock) override;
+	Entity *GetEntityByName(std::string name);
 
 	// ENTITIES //
-	Player *player;
-	Entity *fountain;
-	Entity *fountain2;
-	Entity *grass;
+	std::list<std::pair<std::string, Entity *>> elems;
 	// -------  //
+
+	// MAP //
+	MapReader *mapReader;
+	MapInterpretor *mapInterpretor;
+	// --- //
 };
 
 #endif

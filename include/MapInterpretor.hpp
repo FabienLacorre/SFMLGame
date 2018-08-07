@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include <list>
+#include "TextureLoader.hpp"
 
 class MapInterpretor {
 public:
 	MapInterpretor();
 	~MapInterpretor();
 
-	void DecryptMap(std::list<std::string> const &map);
+	std::list<std::string> &DecryptMap(std::list<std::string> const &map);
 	std::string const &GetNameTexture(int number);
 private:
 	std::pair<int, std::string> elems[3] = {
@@ -18,6 +19,7 @@ private:
 		{2, "water"},
 	};
 
+	std::list<std::string> currentM;
 	std::string currentT;
 };
 

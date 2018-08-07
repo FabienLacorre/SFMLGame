@@ -8,13 +8,15 @@ MapInterpretor::~MapInterpretor(){
 	std::cout << "MAP INTERPRETOR DESTROYED" << std::endl;
 }
 
-void MapInterpretor::DecryptMap(std::list<std::string> const &map){
+std::list<std::string> &MapInterpretor::DecryptMap(std::list<std::string> const &map){
+	this->currentM.clear();
 	for (auto m : map){
 		for (int i = 0; i < m.length(); i++){
-			std::cout << this->GetNameTexture(m[i]) << " ";
+			this->currentM.push_back(this->GetNameTexture(m[i]));
 		}
-		std::cout << std::endl;
+		this->currentM.push_back("jump");
 	}
+	return this->currentM;
 }
 
 std::string const &MapInterpretor::GetNameTexture(int number){
@@ -26,3 +28,4 @@ std::string const &MapInterpretor::GetNameTexture(int number){
 	}
 	return this->currentT;
 }
+

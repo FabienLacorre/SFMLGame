@@ -7,8 +7,7 @@
 #include "Panel.hpp"
 #include "PanelMenu.hpp"
 #include "PanelGame.hpp"
-#include "MapReader.hpp"
-#include "MapInterpretor.hpp"
+
 
 void CatchEnd(sf::Event &event, Window &win){
     while (win.GetWindow().pollEvent(event)){
@@ -40,22 +39,14 @@ void RestartClock(sf::Clock &clock){
 }
 
 int main() {
-
-    MapReader mapReader("./map/Map.txt");
-    mapReader.DisplayMap();
-
-    MapInterpretor mapInterpretor;
-    mapInterpretor.DecryptMap(mapReader.GetMap());
-
-
-
-    Window win(592, 592);
+    Window win(640, 640);
     sf::Clock clock;
     TextureLoader textureLoader;
 
     textureLoader.PushTexture("fountain", "./img/zeldaLikeSprite/fountain.png");
     textureLoader.PushTexture("player", "./img/zeldaLikeSprite/playerSprites.png");
     textureLoader.PushTexture("grass", "./img/zeldaLikeSprite/grass.png");
+    textureLoader.PushTexture("water", "./img/zeldaLikeSprite/water.png");
 
     textureLoader.PushTexture("heart", "./img/zeldaLikeSprite/heart.png");
 
